@@ -27,7 +27,7 @@ class Base:
                         connection, address = s.accept()
                         clients.append((connection, address))
                         while True:
-                            donnection.settimeout(3)
+                            connection.settimeout(3)
                             from_client = connection.recv(4096).decode()
                             to_client = "data: {}".format(from_client)
                             connection.sent(to_client.encode("UTF-8"))
